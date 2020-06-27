@@ -1,0 +1,71 @@
+/*
+pour se positionner sur une class: .nom-class
+pour se positionner sur une balise(a, p,..):a{}
+pour utiliser un id: #
+*/
+
+body{
+background: rgba(255, 255, 128, .5);
+}
+
+a{
+  color:gray;
+  font-size: 15pt;
+  text-decoration:  none;
+}
+a:hover{
+  color: #383838	;
+  background-color: orange;
+}
+
+p1{
+  color: green;
+
+}
+
+h1{
+  font-family:fantasy;
+}
+
+.indent{
+  margin-left: 10px;
+}
+
+.gap_below{
+  margin-bottom: 25px;
+}
+
+/*This class apply padding and margin*/
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+/*This class apply margin left and right for our row*/
+.row {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+ .col-md-6{
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+
+@media (min-width: 992px) {
+  .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
+    float: left;
+  }
+
+
+
+@media (min-width:100px) {
+.responsive{
+  display: inline-block;
+  width:200px;
+  border: 1px solid black;
+  }
+}

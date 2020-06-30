@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>This is my first page</title>
+    <link rel="stylesheet" href="css/styles.css">
+
+
+    <script src=" http://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+  </head>
+
+  <body>
+    <a href="index.html"> Home </a>
+    &nbsp;
+    <a href="aboutme.html"> About me</a>
+    &nbsp;
+    <a href="contactme.html"> Contact me</a>
+    &nbsp;
+    <a href="skills.html"> Skils</a>
+    &nbsp;
+    <a href="example.html"> Private</a>
+    &nbsp;
+    <a href="#images"> Images</a>
+    <hr> </hr>
+
+
+    <h1>Contact details</h1>
+
+    This is my address:
+    <ul>
+      <li>133,avenue raoul 33400 bordeaux</li>
+      <li>My town</li>
+      <li>My nation</li>
+    </ul>
+
+    <!--
+     	Il ya deux méthode d efaire une alerte
+    -->
+<h1 id="title" onclick="alert('Can you reload please!!');">Bonjour 1</h1>
+
+<h1 id="title" onclick="sayHello()"> Bonjour 2</h1>
+
+
+<h1 id="this" onclick="console.log('hello');">Salut</h1>
+
+<h1 id="test" onclick="$('#test').html('Goodbye');">Hola</h1>
+
+<h1 id="p" onclick="$('#p').html('Goodbye');">Hello</h1>
+
+
+<h1 id="try" onclick="fct();">test</h1>
+
+<!--
+ 	the script tag is where you can put
+ 	more complex
+we call this $('#p') a jQuery selector
+-->
+<div id="images">
+  <div class="container">
+  		<h1>Image Gallery</h1>
+  <!--
+     These are the thumbnail images.
+     They are laid out using the
+     bootstrap grid.
+     I have given them all the class
+     "crop-image" which I use in the
+     css and the javascript code.
+  -->
+
+  <div class="row">
+    <div class="col-md-3">
+      <img class="crop-img"
+        src="images/a.jpg"
+        alt="graffittied building"/>
+    </div>
+
+    <div class="col-md-3">
+      <img class="crop-img"
+        src="images/b.jpg"
+        alt="display of cheese"/>
+    </div>
+
+    <div class="col-md-3">
+      <img class="crop-img"
+        src="images/c.jpg"
+        alt="synethesizer workshop"/>
+    </div>
+    <div class="col-md-3">
+      <img class="crop-img"
+         src="images/d.jpg"
+         alt="City night"/>
+    </div>
+    <div class="col-md-3">
+      <img class="crop-img"
+        src="images/b.jpg"
+        alt="graffittied building"/>
+    </div>
+    <div class="col-md-3">
+      <img class="crop-img"
+        src="images/c.jpg"
+        alt="graffittied building"/>
+    </div>
+    <div class="col-md-3">
+      <img class="crop-img"
+        src="images/b.jpg"
+        alt="graffittied building"/>
+    </div>
+    <div class="col-md-3">
+      <img class="crop-img"
+        src="images/a.jpg"
+        alt="graffittied building"/>
+    </div>
+
+  </div>
+  <!--
+    this is the large image which is
+    on a row of its own.
+    I will change it source in the
+    javascript
+  -->
+  <div class="row">
+    <div class="col-md-12 displayed">
+      <img id="bigImage"
+        class="large-img"
+        src="images/a.jpg"
+        alt="graffittied building"/>
+    </div>
+  </div>
+</div>
+
+</div>
+
+</div>
+
+
+
+
+
+<script type="text/javascript">
+
+	function sayHello() {
+		alert('Hello');
+	};
+
+function fct(){
+    $("#try").html("Goodbye");
+    $("#try").click(function () {
+        $("#try").html("Hello");
+        $("#try").off("click");
+    });
+};
+
+// when we click on the thumbnail
+// we set the src attribute of the
+// big image to be the same as the
+// src of the image we have clicked on
+// ("this"). This loads the same
+// image file into the big image
+$(".crop-img").click(function(){
+  $("#bigImage").attr('src',
+    $(this).attr('src'));
+});
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

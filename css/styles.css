@@ -43,24 +43,7 @@ h1{
   margin-left: auto;
 }
 /*This class apply margin left and right for our row*/
-.row {
-  margin-right: -15px;
-  margin-left: -15px;
-}
- .col-md-6,.col-md-3,.col-md-12 {
-   width: 100%;
- }{
-  position: relative;
-  min-height: 1px;
-  padding-right: 15px;
-  padding-left: 15px;
-}
-.col-md-3 {
-  width: 25%;
-}
-.col-md-12 {
-  width: 100%;
-}
+
 
 
 .displayed {
@@ -95,4 +78,11 @@ h1{
   margin-top: 10px;
   margin-bottom: 10px;
   margin-left: 20px;
+}
+a {
+  color: blue;
+}
+
+.changeme { 
+  color: red;
 }

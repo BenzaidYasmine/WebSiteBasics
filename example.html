@@ -40,7 +40,7 @@
     -->
 <h1 id="title" onclick="alert('Can you reload please!!');">Bonjour 1</h1>
 
-<h1 id="title" onclick="sayHello()"> Bonjour 2</h1>
+<h1  onclick="sayHello()"> Bonjour 2</h1>
 
 
 <h1 id="this" onclick="console.log('hello');">Salut</h1>
@@ -49,9 +49,15 @@
 
 <h1 id="p" onclick="$('#p').html('Goodbye');">Hello</h1>
 
+<h1 id="try" onclick="fct();">Text is change each click</h1>
 
-<h1 id="try" onclick="fct();">test</h1>
+<h1 id="titre" onclick="no();">code</h1>
 
+<a class="changeme"> what colour am I? </a>
+
+<a class="changemeagain changeme">what colour am I?</a>
+
+<h1 id="number" onclick="count();"> </h1> 
 <!--
  	the script tag is where you can put
  	more complex
@@ -141,28 +147,92 @@ we call this $('#p') a jQuery selector
 <script type="text/javascript">
 
 	function sayHello() {
-		alert('Hello');
+		alert('Hello Amigo');
 	};
 
-function fct(){
-    $("#try").html("Goodbye");
-    $("#try").click(function () {
-        $("#try").html("Hello");
-        $("#try").off("click");
-    });
-};
 
-// when we click on the thumbnail
-// we set the src attribute of the
-// big image to be the same as the
-// src of the image we have clicked on
-// ("this"). This loads the same
-// image file into the big image
-$(".crop-img").click(function(){
-  $("#bigImage").attr('src',
-    $(this).attr('src'));
-});
+//fonction jquery
+  function fct(){
+      $("#try").html("Goodbye");
+      $("#try").click(function () {
+          $("#try").html("Hello");
+          $("#try").off("click");
+      });
+  };
 
+  // when we click on the thumbnail
+  // we set the src attribute of the
+  // big image to be the same as the
+  // src of the image we have clicked on
+  // ("this"). This loads the same
+  // image file into the big image
+  $(".crop-img").click(function(){
+    $("#bigImage").attr('src',
+      $(this).attr('src'));
+  });
+
+function say(word){
+  alert(word);
+}
+
+function no(){ 
+  $("#titre").html("hello world");
+}
+
+
+function test(){
+  $("#title").html(alert());
+}
+var myVar = 1;
+$("#number").html(myVar+1);
+myVar = myVar + 1;
+console.log("myVar:"+myVar);
+////////////////
+var a = 1;
+if (a == 1){
+  console.log("one");
+  a = a + 1;
+}
+if (a == 1){
+  console.log("two");
+}
+a = a + 1;
+if (a == 2){
+  console.log("three");
+  a = a + 1;
+}
+if (a == 4){
+  console.log("four");
+}
+////////////////////
+var number = 1;
+if(number == 1){
+  $("#title").html("chapter" + number + 1);
+}
+if(number == 2){
+  number = number + 2;
+}
+$("#title").html("chapter" + number);
+console.log("number:"+number);
+
+
+
+
+// this is a variable, we start it at 0 
+var counter = 0; 
+// display the variable in the 
+// element "number" 
+$("#number").text(counter);
+// when this function is called it runs 
+// everything inside the curly brackets 
+function count() { 
+// firstly one is added to the variable 
+// ‘counter' 
+counter = counter + 1;
+// set the h1 element (with id “number”) 
+// with the value of ‘counter' 
+$("#number").text(counter); 
+} 
 
 </script>
 

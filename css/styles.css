@@ -43,6 +43,7 @@ h1{
   margin-left: auto;
 }
 /*This class apply margin left and right for our row*/
+<<<<<<< HEAD
 .row {
   margin-right: -15px;
   margin-left: -15px;
@@ -61,6 +62,9 @@ h1{
 .col-md-12 {
   width: 100%;
 }
+=======
+
+>>>>>>> dd4e15b65c9eb7bb493d1c3129e68c082f366426
 
 .col-md-1 {
   width: 8.33333333%;
@@ -99,4 +103,11 @@ h1{
   margin-top: 10px;
   margin-bottom: 10px;
   margin-left: 20px;
+}
+a {
+  color: blue;
+}
+
+.changeme { 
+  color: red;
 }

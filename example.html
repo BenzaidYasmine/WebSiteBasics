@@ -52,6 +52,8 @@
 
 <h1 id="try" onclick="fct();">test</h1>
 
+<h1 id="like" onclick="count();"></h1>
+
 <!--
  	the script tag is where you can put
  	more complex
@@ -72,48 +74,54 @@ we call this $('#p') a jQuery selector
   <div class="row">
     <div class="col-md-3">
       <img class="crop-img"
-        src="images/a.jpg"
+        src="images/image1.jpg"
         alt="graffittied building"/>
     </div>
 
     <div class="col-md-3">
       <img class="crop-img"
-        src="images/b.jpg"
+        src="images/image9.jpg"
         alt="display of cheese"/>
     </div>
 
     <div class="col-md-3">
       <img class="crop-img"
-        src="images/c.jpg"
+        src="images/image8.jpg"
         alt="synethesizer workshop"/>
     </div>
+
     <div class="col-md-3">
       <img class="crop-img"
-         src="images/d.jpg"
+         src="images/image9.jpg"
          alt="City night"/>
     </div>
+
     <div class="col-md-3">
       <img class="crop-img"
-        src="images/b.jpg"
+        src="images/image6.jpg"
         alt="graffittied building"/>
     </div>
+
     <div class="col-md-3">
       <img class="crop-img"
-        src="images/c.jpg"
+        src="images/image4.jpg"
         alt="graffittied building"/>
     </div>
+
     <div class="col-md-3">
       <img class="crop-img"
-        src="images/b.jpg"
+        src="images/image5.jpg"
         alt="graffittied building"/>
     </div>
+
     <div class="col-md-3">
       <img class="crop-img"
-        src="images/a.jpg"
+        src="images/image7.jpg"
         alt="graffittied building"/>
     </div>
 
   </div>
+
   <!--
     this is the large image which is
     on a row of its own.
@@ -121,29 +129,43 @@ we call this $('#p') a jQuery selector
     javascript
   -->
   <div class="row">
+
+    <div class="col-md-1">
+				<button id="backward">&lt;</button>
+		</div>
+
     <div class="col-md-12 displayed">
       <img id="bigImage"
         class="large-img"
-        src="images/a.jpg"
+        src="images/image1.jpg"
         alt="graffittied building"/>
+    </div>
+
+    <div class="col-md-1">
+  			<button id="forward">&gt;</button>
+  	</div>
+
     </div>
   </div>
 </div>
 
-</div>
-
-</div>
-
-
-
-
 
 <script type="text/javascript">
+
+  var counter = 0;
+  $("#like").text(counter);
+  function count(){
+    counter= counter + 1;
+    $("#like").text(counter);
+  };
+
 
 	function sayHello() {
 		alert('Hello');
 	};
 
+// cette fonction permet de changer un titre ou un msg en clickant a chaque fois sur lui
+//par exemple comme il a été définie ds le # puis Goodbye, ensuite hello, Goodbye....
 function fct(){
     $("#try").html("Goodbye");
     $("#try").click(function () {
@@ -152,15 +174,45 @@ function fct(){
     });
 };
 
+var paused = false;
 // when we click on the thumbnail
 // we set the src attribute of the
 // big image to be the same as the
 // src of the image we have clicked on
 // ("this"). This loads the same
 // image file into the big image
+
 $(".crop-img").click(function(){
   $("#bigImage").attr('src',
     $(this).attr('src'));
+});
+
+
+var counter = 1;
+$("#image"+counter).click();
+
+//>
+$("#backward").click(function(){
+  counter= counter-1;
+
+  if(counter < 1){
+    counter = 4;
+  }
+  $("#image"+counter).click();
+});
+
+//<
+$("#forward").click(function(){
+  counter = counter + 1;
+
+  if(counter > 4){
+    counter = 1;
+  }
+  $("#image"+counter).click();
+});
+
+$("#bigImage").click(function (){
+			paused = !paused;
 });
 
 

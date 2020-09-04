@@ -58,7 +58,12 @@
 <a class="changemeagain changeme">what colour am I?</a>
 
 <h1 id="number" onclick="count();"> </h1> 
+
+
+  
 <!--
+  <h1  onclick="fleche();">   <button id="forward"> ?? </button>  </h1> 
+  <h1 id="image" onclick="click();"> > </h1> 
  	the script tag is where you can put
  	more complex
 we call this $('#p') a jQuery selector
@@ -77,44 +82,44 @@ we call this $('#p') a jQuery selector
 
   <div class="row">
     <div class="col-md-3">
-      <img class="crop-img"
+      <img id="image1"  class="crop-img"
         src="images/a.jpg"
         alt="graffittied building"/>
     </div>
 
     <div class="col-md-3">
-      <img class="crop-img"
+      <img id="image2"  class="crop-img"
         src="images/b.jpg"
         alt="display of cheese"/>
     </div>
 
     <div class="col-md-3">
-      <img class="crop-img"
+      <img id="image3" class="crop-img"
         src="images/c.jpg"
         alt="synethesizer workshop"/>
     </div>
-    <div class="col-md-3">
-      <img class="crop-img"
+    <div  class="col-md-3">
+      <img id="image4"class="crop-img"
          src="images/d.jpg"
          alt="City night"/>
     </div>
-    <div class="col-md-3">
-      <img class="crop-img"
+    <div  class="col-md-3">
+      <img id="image5"  class="crop-img"
         src="images/b.jpg"
         alt="graffittied building"/>
     </div>
-    <div class="col-md-3">
-      <img class="crop-img"
+    <div  class="col-md-3">
+      <img id="image6" class="crop-img"
         src="images/c.jpg"
         alt="graffittied building"/>
     </div>
-    <div class="col-md-3">
-      <img class="crop-img"
+    <div  class="col-md-3">
+      <img id="image7" class="crop-img"
         src="images/b.jpg"
         alt="graffittied building"/>
     </div>
-    <div class="col-md-3">
-      <img class="crop-img"
+    <div  class="col-md-3">
+      <img id="image8"class="crop-img"
         src="images/a.jpg"
         alt="graffittied building"/>
     </div>
@@ -126,6 +131,13 @@ we call this $('#p') a jQuery selector
     I will change it source in the
     javascript
   -->
+  <div >
+    <button id="forward">&gt;</button>
+  </div>
+
+  
+  
+
   <div class="row">
     <div class="col-md-12 displayed">
       <img id="bigImage"
@@ -134,13 +146,15 @@ we call this $('#p') a jQuery selector
         alt="graffittied building"/>
     </div>
   </div>
-</div>
+
+  <div>
+    <button id="backward" ;float: left; >&lt;</button>
+  </div>
 
 </div>
 
 </div>
-
-
+</div>
 
 
 
@@ -220,19 +234,74 @@ console.log("number:"+number);
 
 // this is a variable, we start it at 0 
 var counter = 0; 
-// display the variable in the 
-// element "number" 
+// display the variable in the element "number" 
+//afficher le text= la valeur de la viariable counter
 $("#number").text(counter);
 // when this function is called it runs 
 // everything inside the curly brackets 
+
 function count() { 
-// firstly one is added to the variable 
-// ‘counter' 
-counter = counter + 1;
-// set the h1 element (with id “number”) 
-// with the value of ‘counter' 
-$("#number").text(counter); 
+    // firstly one is added to the variable 
+    // ‘counter' 
+    counter = counter + 1;
+    // set the h1 element (with id “number”) 
+    // with the value of ‘counter' 
+    $("#number").text(counter); 
+    if(counter > 10){
+      $("#number").text(counter); 
+      counter = 0;
+      $("#number").text(counter); 
+    
+    }
 } 
+
+function fleche(){ 
+  $("#minor").html("hello world");
+}
+
+
+
+		// when you click on the backwards
+		// button select the next image
+		$("#forward").click(function (){
+			// go forward one in the counter
+			counter = counter + 1;
+			// if we are above 4 (the last
+			// image) loop round to 1 (the
+			// first image)
+			if(counter > 8){
+				counter = 1;
+			}
+      console.log("test :"+counter);
+			// virtually click on the current
+			// image to load it into the big image
+			$("#image"+counter).click();
+      console.log("image"+counter);
+		});
+
+   
+
+
+		// when you click on the backwards
+		// button select the next image
+		$("#backward").click(function (){
+			// go forward one in the counter
+			counter = counter - 1;
+			// if we are above 4 (the last
+			// image) loop round to 1 (the
+			// first image)
+			if(counter < 1){
+				counter = 8;
+			}
+      console.log("test :"+counter);
+			// virtually click on the current
+			// image to load it into the big image
+			$("#image"+counter).click();
+      console.log("image"+counter);
+		});
+
+  
+
 
 </script>
 

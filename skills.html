@@ -5,8 +5,10 @@
   <head>
     <meta charset="utf-8">
     <title>This is my first page</title>
-    <link rel="stylesheet" href="css/styles.css">
-
+    <link rel="stylesheet" href="css/logo.css">
+    <link rel="stylesheet" href="css/animation.css">
+    <link rel="stylesheet" href="bootstrap/bootstrap.css">
+    <script src=" http://code.jquery.com/jquery-1.11.3.min.js"></script>
   </head>
 
   <body>
@@ -21,14 +23,24 @@
     <a href="example.html"> Private</a>
     <hr> </hr>
 
-    <h1>
+    <h1 class="text">
       This page will be consecrate for skills
     </h1>
 
 
     <div class="container">
           <div class="row">
-            <div class="col-md-6">
+            <div class="col-6">
+              <h2>Hobbies:</h2>
+              <ul class="liste">
+                <li>Photography , see my
+                  <a <link rel="stylesheet" href="https://www.instagram.com/stories/jane_yassou/">instagram</a></li>
+                <li>coding application</li>
+                <li>play football</li>
+              </ul>
+            </div>
+
+            <div class="col-6">
               <h2>Hobbies:</h2>
               <ul>
                 <li>Photography , see my
@@ -38,22 +50,77 @@
               </ul>
             </div>
 
-            <div class="col-md-6">
-              <h2>Skills:</h2>
+            <div class="col-6">
+              <h2>Hobbies:</h2>
               <ul>
+                <li>Photography , see my
+                  <a <link rel="stylesheet" href="https://www.instagram.com/stories/jane_yassou/">instagram</a></li>
+                <li>coding application</li>
+                <li>play football</li>
+              </ul>
+            </div>
+
+            <div class="col-6">
+              <h2 >Skills:</h2>
+              <ul class="liste">
                 <li>CSS</li>
                 <li>Java</li>
                 <li>Angular</li>
                 <li>JavaScript</li>
+              
               </ul>
             </div>
           </div>
+          <h3 class="text">
+            Do you like the design ?? click an the emoticon 
+          </h3>
+       
+              <div class="emoticon  responsive">
+                <button onclick="like()">&#128525; </button>
+              </div>
 
+              <div class="emoticon responsive ">
+                <button onclick="caneDoBettre()"> &#128556; </button> 
+              </div>
+
+              <div class="emoticon responsive ">
+                 <button onclick="dislike() "> &#128533; </button> 
+              </div>
+
+           <!-- <div class="emoticon  responsive"> Like</div>
+            <div class="emoticon  responsive"> Can do better</div>
+            <div class="emoticon  responsive"> Dislike</div>
+          -->
+         
+              <script type="text/javascript">
+                  var good=0;
+                      function like(){
+                        good++;
+                        console.log("number of like: "+good);
+                        return good;
+                      }
+
+                  var bad=0;
+                    function dislike(){
+                      bad++;
+                      console.log("number of dislike: "+bad);
+                      return bad;
+                    }
+
+                    var cdb=0;
+                    function caneDoBettre(){
+                      cdb++;
+                      console.log("number of ca do better: "+cdb);
+                      return cdb;
+                    }
+              </script>
           
+
+     
+
+
+
+
     </div>
-
-
-
-
   </body>
 </html>

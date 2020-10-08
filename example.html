@@ -22,9 +22,15 @@
     &nbsp;
     <a href="example.html"> Private</a>
     &nbsp;
+    <a href="night.html"> night</a>
+    &nbsp;
     <a href="#images"> Images</a>
+    &nbsp;
+    
+    <a id="dark" onclick="myFunction()">dark-mode </a>
     <hr> </hr>
 
+    <button id="dark" onclick="myFunction()">Toggle dark mode</button>
 
     <h1>Contact details</h1>
 
@@ -60,6 +66,8 @@
 <h1 id="number" onclick="count();"> </h1> 
 
 
+
+
   
 <!--
   <h1  onclick="fleche();">   <button id="forward"> ?? </button>  </h1> 
@@ -79,6 +87,14 @@ we call this $('#p') a jQuery selector
      "crop-image" which I use in the
      css and the javascript code.
   -->
+  <div  class="position" >
+    <button id="forward">&gt;</button>
+  </div>
+  
+  <div  class="">
+    <button id="backward" >&lt;</button>
+  </div>
+
 
   <div class="row">
     <div class="col-md-3">
@@ -123,24 +139,20 @@ we call this $('#p') a jQuery selector
         src="images/a.jpg"
         alt="graffittied building"/>
     </div>
-
+   
   </div>
+  
+  
+  
   <!--
     this is the large image which is
     on a row of its own.
     I will change it source in the
     javascript
   -->
-  <div >
-    <button id="forward">&gt;</button>
-  </div>
 
-  <div>
-    <button id="backward"  >&lt;</button>
-  </div>
-  
   <div class="row">
-    <div class="col-md-12 displayed">
+    <div>
       <img id="bigImage"
         class="large-img"
         src="images/a.jpg"
@@ -148,10 +160,7 @@ we call this $('#p') a jQuery selector
     </div>
   </div>
 
-
-
 </div>
-
 </div>
 </div>
 
@@ -229,8 +238,6 @@ $("#title").html("chapter" + number);
 console.log("number:"+number);
 
 
-
-
 // this is a variable, we start it at 0 
 var counter = 0; 
 // display the variable in the element "number" 
@@ -260,46 +267,40 @@ function fleche(){
 
 
 
-		// when you click on the backwards
-		// button select the next image
-		$("#forward").click(function (){
-			// go forward one in the counter
-			counter = counter + 1;
-			// if we are above 4 (the last
-			// image) loop round to 1 (the
-			// first image)
-			if(counter > 8){
-				counter = 1;
-			}
-      console.log("test :"+counter);
-			// virtually click on the current
-			// image to load it into the big image
-			$("#image"+counter).click();
-      console.log("image"+counter);
-		});
+// when you click on the backwards
+// button select the next image
+$("#forward").click(function (){
+  // go forward one in the counter
+  counter = counter + 1;
+  
+  if(counter > 8){
+    counter = 1;
+  }
+  console.log("test :"+counter);
+ 
+  $("#image"+counter).click();
+  console.log("image"+counter);
+});
 
    
 
 
-		// when you click on the backwards
-		// button select the next image
-		$("#backward").click(function (){
-			// go forward one in the counter
-			counter = counter - 1;
-			// if we are above 4 (the last
-			// image) loop round to 1 (the
-			// first image)
-			if(counter < 1){
-				counter = 8;
-			}
-      console.log("test :"+counter);
-			// virtually click on the current
-			// image to load it into the big image
-			$("#image"+counter).click();
-      console.log("image"+counter);
-		});
 
-  
+$("#backward").click(function (){
+  counter = counter - 1;
+  if(counter < 1){
+    counter = 8;
+  }
+  console.log("test :"+counter);
+  $("#image"+counter).click();
+  console.log("image"+counter);
+});
+
+
+function myFunction() {
+  var element = document.body;
+      element.classList.toggle("dark-mode");
+}
 
 
 </script>

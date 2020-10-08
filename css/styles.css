@@ -2,12 +2,15 @@
 pour se positionner sur une class: .nom-class
 pour se positionner sur une balise(a, p,..):a{}
 pour utiliser un id: #
+
+
 */
 
-body{
-background: rgba(255, 255, 128, .5);
-}
 
+body{
+  background: linear-gradient(to right,#aaaaaa,#272522);
+}
+  
 a{
   color:gray;
   font-size: 15pt;
@@ -43,14 +46,16 @@ h1{
   margin-left: auto;
 }
 /*This class apply margin left and right for our row*/
-<<<<<<< HEAD
 .row {
   margin-right: -15px;
   margin-left: -15px;
+  text-align: center 
 }
  .col-md-6,.col-md-3,.col-md-12,.col-md-1 {
    width: 100%;
- }{
+ }
+ /*pading*/
+ .moree{
   position: relative;
   min-height: 1px;
   padding-right: 15px;
@@ -62,10 +67,6 @@ h1{
 .col-md-12 {
   width: 100%;
 }
-=======
-
->>>>>>> dd4e15b65c9eb7bb493d1c3129e68c082f366426
-
 .col-md-1 {
   width: 8.33333333%;
 }
@@ -90,6 +91,7 @@ h1{
   border: 1px solid black;
   }
 }
+
 .crop-img{
   max-height:150px;
   max-width:100%;
@@ -97,17 +99,32 @@ h1{
   margin-left: 20px;
   padding-top: 20px
 }
-
+/* make a big image*/
 .large-img{
   max-width:50%;
   margin-top: 10px;
   margin-bottom: 10px;
   margin-left: 20px;
 }
+/*color*/
 a {
   color: blue;
 }
 
 .changeme { 
   color: red;
+}
+
+.position{
+ 
+ float: right;
+}
+/*Dark mode*/
+.dark-mode{
+  background-color: black;
+  color: white;
+}
+/*list of puce*/
+.liste{
+  list-style-type: "\1F44D"; 
 }

@@ -1,0 +1,137 @@
+<html>
+<head>
+<title>eReader</title>
+
+
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<link rel="stylesheet"
+type="text/css"
+href="bootstrap/bootstrap.css"
+/>
+
+<link rel="stylesheet"
+type="text/css"
+href="css/stylesNigth.css" 
+/>
+
+</head>
+<body>
+    <a href="index.html"> Home </a>
+    &nbsp;
+    <a href="aboutme.html"> About me</a>
+    &nbsp;
+    <a href="contactme.html"> Contact me</a>
+    &nbsp;
+    <a href="skills.html"> Skils</a>
+    &nbsp;
+    <a href="example.html"> Private</a>
+    &nbsp;
+    <a href="night.html"> night</a>
+    &nbsp;
+    <a href="#images"> Images</a>
+    &nbsp;
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <button class="btn btn-default js-go-day">DAY NODE</button>
+            <button class="btn btn-default js-go-night">NIGHT NODE</button>
+        </div>
+    </div>
+
+
+<div class="row ">
+    <div class="col-md-3 ">
+    <ul class="list-group scrollable text" id="chapterlist">
+
+        <li id="chapter0 " class="list-group-item chapter-thumbnail">
+            Hamlet By William Shakespeare
+        </li>
+
+        <li id="chapter1" class="list-group-item chapter-thumbnail">
+             SCENE I.Elsinore. A platform before the castle.
+        </li>
+
+        <li id="chapter2" class="list-group-item chapter-thumbnail">
+            SCENE II. A room of state in the castle.
+        </li>
+
+        <li id="chapter3" class="list-group-item chapter-thumbnail">
+            SCENE III. A room in Polonius' house.
+        </li>
+
+     
+    </ul>
+</div>
+
+<div class="col-md-9">
+    <!--
+        well is a bootstrap class for creating
+        a nice container box
+        The id, mainViewer is for our use
+    -->
+    <div class="well" id="mainViewer">
+    </div>
+</div>
+
+</div>
+
+
+
+<script>
+
+
+
+$('.js-go-night').click(function(){
+   $("body").removeClass("day").addClass("night");
+});
+
+
+$('.js-go-day').click(function(){
+    $("body").removeClass("night").addClass("day");
+});
+
+
+var counter = 0;
+$(".chapter-thumbnail").click(function(){
+
+    $("#mainViewer").html(
+    $(this).html());
+
+    var id = $(this).attr("id");
+    counter = parseInt(id.slice(-1));
+});
+
+
+$("#chapter"+counter).click();
+
+$("#mainViewer").click(function (event){
+
+    if(event.offsetX< $(this).width()*0.3){
+
+        counter = counter - 1;
+    } else {
+
+        counter = counter + 1;
+    }
+
+    if(counter < 0){
+        counter =  0;
+    }
+
+    if(counter >= $(".chapter-thumbnail").length){
+     counter =$(".chapter-thumbnail").length-1;
+    }
+    $("#chapter"+counter).click();
+});
+
+
+
+</script>
+
+
+
+</body>
+</html>
